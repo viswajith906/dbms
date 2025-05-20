@@ -1,1 +1,4 @@
 
+select * from employee where salary >( select avg(salary) from employee);
+ select name,dept,max(salary) from employee group by dept;
+select * from employee where salary>(select avg(salary) from employee where dept='HR');
