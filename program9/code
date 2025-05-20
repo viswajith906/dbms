@@ -1,1 +1,4 @@
-
+ create table student(name varchar(20),class varchar(30),age int,address varchar(35),marks float);
+ insert into student values('lima','s2-A',22,'malappuram',89.9),('Rinsila','s2-B',21,'thrissure',91.95),('Sajin','s2-A',23,'Calicut',94.4),('Nandhana','s2-B',21,'Kochi',93.5),('Afna','s2-A',21,'Malappuram',85.7);
+create view info as select name,marks from student;
+ select * from info;
