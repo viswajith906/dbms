@@ -1,1 +1,47 @@
 
+show dbs
+
+use company
+
+db.createCollection("employee")
+
+show collections
+
+db.employee.insertMany([
+	{name:"Arun",age:21,salary:50000,place:"Kochi",department:"Backend"},
+	{name:"Fasil",age:21,salary:98000,place:"Pattambi",department:"Backend"},
+	{name:"Selva",age:25,salary:90000,place:"Valanchery",department:"Frontend"},
+	{name:"Aparna",age:22,salary:4000,place:"Palakkad",department:"Design"},
+	{name:"Huda",age:22,salary:7000,place:"Ponnani",department:"Accounting"}])
+
+db.employee.find()
+
+db.employee.find({place:"Kochi"})
+
+db.employee.findOne()
+
+db.employee.find({age:25},{_id:0,name:1,place:1})
+
+db.employee.find({salary:90000})
+
+db.employee.find({ salary: { $lt: 5000 } })
+
+db.employee.find({ salary: { $in: [ 5000 , 7000 ] } })
+
+db.employee.find({ salary: { $nin: [ 5999 , 7999 ] } })
+
+db.employee.find({$or: [{ salary: {$lt: 6000} },{ salary: {$gt: 7000} }]})
+
+db.employee.updateOne( {name: "Arun" }, { $set: { designation:"Manager"} } ) 
+
+db.employee.deleteOne({ name: "Arun" })
+
+use emp
+
+db.dropDatabase()
+
+use company
+
+db.createcollection("staff")
+
+db.staff.drop()
